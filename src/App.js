@@ -49,9 +49,16 @@ function App() {
         console.log('Something went wrong!', e);
       });
 
-    }
+      // ! this method used to get the users playlists 
+      spotifyApi.getUserPlaylists().then((playlists)=>{
+               dispatch({
+                type:'SET_PLAYLISTS',
+                playlists:playlists,
+               })
+      })
 
-      
+    }
+          
   }, [dispatch]);
   // user,
   // console.log(user);
